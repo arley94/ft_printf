@@ -1,11 +1,11 @@
 CC = cc
 CFLAGS = -Wextra -Werror -Wall
 INCLUDES = -I. -I./libft
-LIBINCLUDES = -L./libft -L.
-INC = $(INCLUDES) $(LIBINCLUDES)
-LIBS = -lft -lftprintf
+LIBS = -L. -lftprintf -L./libft -lft
 DEPS = libft/libft.h ftprintf.h
-FILES = ft_printf
+FILES = ft_printf \
+					ft_putnbr_base
+
 
 #B_FILES =
 
@@ -18,13 +18,13 @@ OBJ = $(FILES:%=%.o)
 NAME = libftprintf.a
 
 $(NAME): $(OBJ)
-	$(MAKE) -C libft
+	cd libft && $(MAKE) && $(MAKE) clean
 	ar -rc $@ $^
 
 all: $(NAME)
 
-test: main.c
-	$(CC) -o $@ main.c $(CFLAGS) $(INC) $(LIBS)
+test: $(NAME) main.c
+	$(CC) -o $@ main.c $(CFLAGS) $(INCLUDES) $(LIBS)
 
 #$(B_NAME): $(B_OBJ) $(OBJ)
 #	ar -rc $(NAME) $^
@@ -33,7 +33,7 @@ test: main.c
 #bonus: $(B_NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) test
 #	rm -f $(B_OBJ)
 
 fclean: clean
