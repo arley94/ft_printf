@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 16:50:09 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/28 16:50:35 by acoto-gu         ###   ########.fr       */
+/*   Created: 2023/09/28 15:24:41 by acoto-gu          #+#    #+#             */
+/*   Updated: 2023/09/28 16:49:45 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-void	ft_printf(const char *str, ...)
+void	ft_print_char(char c)
 {
-	// va_list ap;
-
-	// va_start(ap, str);
-	while (*str)
-	{
-		ft_putchar_fd(*str, 1);
-		str++;
-	}
+	ft_putchar_fd(c, 1);
 }
