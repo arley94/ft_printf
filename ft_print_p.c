@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_print_p.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/17 12:50:29 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/25 11:11:32 by acoto-gu         ###   ########.fr       */
+/*   Created: 2023/09/29 11:39:21 by acoto-gu          #+#    #+#             */
+/*   Updated: 2023/09/30 17:35:17 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_print_p(void *p)
 {
-	char	*d;
-	char	*s;
-	size_t	i;
-
-	if (!src && !dest)
-		return (NULL);
-	if (src != dest)
+	if (!p)
 	{
-		d = (char *) dest;
-		s = (char *) src;
-		i = 0;
-		while (i < n)
-		{
-			d[i] = s[i];
-			i++;
-		}
+		ft_print_str("(nil)");
+		return (5);
 	}
-	return (dest);
+	ft_print_str("0x");
+	return (2 + ft_putnbr_base_u((long)p, "0123456789abcdef"));
 }

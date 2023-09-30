@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_print_hex_l.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoto-gu <acoto-gu@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 14:42:54 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/14 13:41:54 by acoto-gu         ###   ########.fr       */
+/*   Created: 2023/09/29 10:53:21 by acoto-gu          #+#    #+#             */
+/*   Updated: 2023/09/30 15:31:11 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_isprint(int c)
+int	ft_print_hex_l(unsigned int nb)
 {
-	if (c >= 32 && c < 127)
-		return (1);
-	return (0);
+	return (ft_putnbr_base_u(nb, "0123456789abcdef"));
 }

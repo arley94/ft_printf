@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_print_hex_u.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 15:05:44 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/25 10:45:33 by acoto-gu         ###   ########.fr       */
+/*   Created: 2023/09/29 11:08:22 by acoto-gu          #+#    #+#             */
+/*   Updated: 2023/09/30 15:31:25 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_print_hex_u(unsigned int nb)
 {
-	size_t	len;
-
-	len = 0;
-	while (s[len])
-	{
-		len++;
-	}
-	return (len);
+	return (ft_putnbr_base_u(nb, "0123456789ABCDEF"));
 }

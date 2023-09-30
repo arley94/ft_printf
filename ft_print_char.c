@@ -6,13 +6,14 @@
 /*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:24:41 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/28 16:49:45 by acoto-gu         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:14:40 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#include "ft_printf.h"
 
-void	ft_print_char(char c)
+int	ft_print_char(char c)
 {
 	ft_putchar_fd(c, 1);
+	return (1);
 }

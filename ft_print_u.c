@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_print_u.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoto-gu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 17:17:28 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/21 17:54:51 by acoto-gu         ###   ########.fr       */
+/*   Created: 2023/09/29 10:34:23 by acoto-gu          #+#    #+#             */
+/*   Updated: 2023/09/30 15:32:14 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_print_u(unsigned int nb)
 {
-	new->next = *lst;
-	*lst = new;
+	return (ft_putnbr_base_u(nb, "0123456789"));
 }

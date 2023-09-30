@@ -1,40 +1,32 @@
 CC = cc
 CFLAGS = -Wextra -Werror -Wall
-INCLUDES = -I. -I./libft
-LIBS = -L. -lftprintf -L./libft -lft
-DEPS = libft/libft.h ftprintf.h
+INCLUDES = -I.
+DEPS = ft_printf.h
 FILES = ft_printf \
-					ft_putnbr_base
-
-
-#B_FILES =
+					ft_putnbr_base \
+					ft_print_char \
+					ft_print_str \
+					ft_print_decimal \
+					ft_print_u \
+					ft_print_hex_l \
+					ft_print_hex_u \
+					ft_print_p \
+					ft_print_format \
+					ft_putchar_fd \
+					ft_putstr_fd \
+					ft_strlen
 
 OBJ = $(FILES:%=%.o)
-
-#B_OBJ = $(B_FILES:%=%.o)
-
-#B_NAME = .bonus
 
 NAME = libftprintf.a
 
 $(NAME): $(OBJ)
-	cd libft && $(MAKE) && $(MAKE) clean
 	ar -rc $@ $^
 
 all: $(NAME)
 
-test: $(NAME) main.c
-	$(CC) -o $@ main.c $(CFLAGS) $(INCLUDES) $(LIBS)
-
-#$(B_NAME): $(B_OBJ) $(OBJ)
-#	ar -rc $(NAME) $^
-#	ar -rc $(B_NAME) $^
-
-#bonus: $(B_NAME)
-
 clean:
-	rm -f $(OBJ) test
-#	rm -f $(B_OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
@@ -44,4 +36,4 @@ re: fclean all
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re

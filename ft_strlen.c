@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoto-gu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 16:35:12 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/21 17:14:32 by acoto-gu         ###   ########.fr       */
+/*   Created: 2023/09/13 15:05:44 by acoto-gu          #+#    #+#             */
+/*   Updated: 2023/09/30 23:31:49 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstnew(void *content)
+size_t	ft_strlen(const char *s)
 {
-	t_list	*ptr;
+	size_t	len;
 
-	ptr = (t_list *)malloc(sizeof(t_list));
-	if (!ptr)
-		return (NULL);
-	ptr->content = content;
-	ptr->next = NULL;
-	return (ptr);
+	len = 0;
+	while (s[len])
+	{
+		len++;
+	}
+	return (len);
 }
