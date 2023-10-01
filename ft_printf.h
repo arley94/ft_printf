@@ -6,7 +6,7 @@
 /*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 08:56:35 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/30 21:17:39 by acoto-gu         ###   ########.fr       */
+/*   Updated: 2023/10/01 11:01:49 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int		ft_print_u(unsigned int nb);
 int		ft_print_hex_l(unsigned int nb);
 int		ft_print_hex_u(unsigned int nb);
 int		ft_print_p(void *p);
-int		ft_print_format(char c, va_list ap);
+int		ft_print_format(char c, va_list *ap);
 
 #endif
