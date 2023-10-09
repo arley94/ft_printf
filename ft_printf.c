@@ -6,7 +6,7 @@
 /*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:50:09 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/10/01 11:00:17 by acoto-gu         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:58:12 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	ft_printf(const char *str, ...)
 	{
 		if (*str == '%')
 		{
-			char_count += ft_print_format(*++str, &ap);
+			if (*(str + 1) != 0)
+				char_count += ft_print_format(*++str, &ap);
 			str++;
 		}
 		else

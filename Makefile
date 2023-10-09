@@ -4,6 +4,7 @@ INCLUDES = -I.
 DEPS = ft_printf.h
 FILES = ft_printf \
 					ft_putnbr_base \
+					ft_putnbr_base_u \
 					ft_print_char \
 					ft_print_str \
 					ft_print_decimal \
